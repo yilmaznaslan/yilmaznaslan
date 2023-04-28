@@ -13,8 +13,5 @@ w
 G.idea/sonarlint/issuestore/3/4/3471b2266d6eec58c5fd5ee75614d33bd68b63f7,c/b/cbf153b4549d1c73eac94fd4b2fc7dd966e18aa6
 _
 /docs/blog/chatGPT/summarizing/youtubeExample.md,9/4/94e1decd7b183bcb2f08ed8e50bed8fca87f72b2
-:
-
-index.html,f/6/f6013a00b362253c64368d6eebc50ea2131754e2
 R
 "docs/blog/aws/network-interface.md,3/a/3a2c438d92ff91a2c0b363bb2b28a8e4cda5c4bf
