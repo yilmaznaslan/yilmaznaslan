@@ -8,3 +8,7 @@ Code review task.
 
 Math/logic problem solving task.
 Based on candidate background, following areas may be covered: Linux basics, Kotlin, SQL basics, Design patterns
+
+
+
+-  DFS question to find the shortest path
