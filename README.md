@@ -7,4 +7,4 @@
 ## Notes
 ### Software Development
 - [API Design ](notes/software-development/backend/apiDesign.md)
-- [Scalability](notes/software-development/backend/scale.md)
+- [Scalability](_posts/2023-04-29-scale.md)
