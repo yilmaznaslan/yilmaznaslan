@@ -30,8 +30,7 @@ system:
   clients. This can prevent a single client from overwhelming the system with requests.
 
 - **Microservices Architecture**: Break down your monolithic application into smaller, more focused microservices. This
-  allows
-  for easier scaling of individual components and better fault tolerance.
+  allows for easier scaling of individual components and better fault tolerance.
 
 - **API Gateway**: Implement an API Gateway to handle tasks like request routing, authentication, and rate limiting.
   This can

@@ -1,6 +1,6 @@
-# What is an API( Application Programming Interfaces)
+# What is an API (Application Programming Interfaces)
 
-APIs are mechanisms that enable two software components to communicate with each other using a set of definitions and
+API's are mechanisms that enable two software components to communicate with each other using a set of definitions and
 protocols.
 
 In the context of APIs, the word Application refers to any software with a distinct function. Interface can be thought
@@ -16,6 +16,12 @@ called the client, and the application sending the response is called the server
 ## API Protocol types
 
 There are four different ways that APIs can work depending on when and why they were created.
+
+
+- SOAP API
+- RPC API
+- WebSocket API
+- REST API
 
 **SOAP APIs**
 
@@ -38,3 +44,4 @@ making it more efficient than REST API.
 These are the most popular and flexible APIs found on the web today. The client sends requests to the server as data.
 The server uses this client input to start internal functions and returns output data back to the client. Let’s look at
 REST APIs in more detail below.
+
