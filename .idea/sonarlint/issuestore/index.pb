@@ -9,8 +9,6 @@ H
 notes/aws/ec2/network.md,0/5/05e4d5671179bc331d8a6c965aa0f3c8d1ce0646
 N
 notes/aws/network-interface.md,9/2/926b71ad79ea3c1844311a23c9a86588177fa848
-I
-notes/languages/nodejs.md,6/4/64159a8cc39c753ccd694b6813d05b3a44adaee3
 j
 :notes/software-development/testing/redGreenRefactorLoop.md,8/b/8b2b8dbf4ba8fab20295c5e5ce466b8988ebbda0
 ^
@@ -37,8 +35,6 @@ P
  notes/interview/oopPrinciples.md,5/9/596aa276a536415ddf4c0f93b871b91957b4fdbc
 R
 "notes/interview/interviewKlarna.md,b/0/b0d38d841685fb45fa819497f6796c03936bba2c
-9
-	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 Q
 !notes/interview/multithreading.md,4/2/4282e404bec2c3cbfe795096f47729e965239753
 f
@@ -49,3 +45,55 @@ f
 6notes/software-development/resilienceFaultTolerence.md,8/2/823667eaca47c4e257de35934250da47b35f2302
 ;
 _config.yml,c/d/cd089ae45ce870c45e434019e8f1ed4f066cd425
+Z
+*notes/architecture/DeploymentStrategies.md,9/7/97d47a8ac001f18a6585eea27a75d3bf3f07656c
+X
+(notes/architecture/InterviewQuestions.md,f/0/f0624081fc429e9ef7987164526ac5a93ad36cc6
+\
+,notes/architecture/MonolithVsMicroservice.md,c/a/caa7b38fe7f1a919377804836e3a555cccbee4ba
+O
+notes/architecture/caseStudy.md,1/7/17841693b3c34ebab0c4bc7c0e0726b23a0e4535
+R
+"notes/architecture/case_study_2.md,3/1/31a956c194d4fe233ddc0ac4dd4939d1f5973569
+Y
+)notes/architecture/database/capTheorem.md,8/8/882ab0a40a9a11bc3b874030dc21b7a6ff8ce122
+i
+9notes/architecture/database/databaseArchitectureDesign.md,e/7/e70b85b5850554207d0cd3e3baa17d0dc1032604
+b
+2notes/architecture/database/databasePerformance.md,e/d/edde9d469bd9f3c415b1c3c4e374cb021e6597b4
+^
+.notes/architecture/database/databaseScaling.md,b/f/bf50557a099a403d77f01f3873ce6f197b495311
+a
+1notes/architecture/database/databaseShardining.md,d/9/d99bf0c46e7e29240710d879937176693f5cfc7b
+X
+(notes/aws/eventBridge/globalendpoints.md,0/c/0c758312c10e42a8d718236d4be32b22975f1f90
+K
+notes/aws/iam/uservsrole.md,2/a/2a988e786d4b80e9d6fd4d602dcf17d7ee542804
+X
+(notes/fundamentals/dsa/DataStructures.md,f/0/f0e199abefe1173433f5da9f6252bf05f289765c
+T
+$notes/fundamentals/dsa/algorithms.md,4/9/4972b977fa3585d02cf2bbea652118c85ae94f58
+d
+4notes/fundamentals/dsa/arrayListVsLinkedArrayList.md,0/7/075eb89dbc37d8b4803ead09c7cfe1e6905a7fc4
+X
+(notes/fundamentals/dsa/constantenTime.md,d/c/dc86a3925fafb985eda78523644a003eefc67201
+M
+notes/fundamentals/dsa/dsa.md,9/1/91b54daf452cbf16b30ed59b162498f42732c89f
+X
+(notes/fundamentals/dsa/whyDSAisUseful.md,8/4/8401a699fb430c6f6d08b7c1f4dbd5cc10022694
+_
+/notes/software-development/backend/apiDesign.md,3/b/3bdc35bd0b926135a5f357d3c3e70f05c55e9507
+[
++notes/software-development/backend/scale.md,7/b/7b10a6e9a2475b77721c589b45d6b3ba7ae3966e
+i
+9notes/software-development/communicationInMicroservice.md,b/f/bfcb11f2dbc6af331eeb87e93832f6b528785e21
+e
+5notes/software-development/loadBalancerVSApiGteway.md,6/d/6ddfd544ae3df1465952d34f8ee845b20a62b61b
+]
+-notes/software-development/resilientSystem.md,a/a/aa9ccfd9b27fcb8aa0d31bde615e2f55c8868434
+^
+.notes/software-development/systemDesignTips.md,f/9/f9177bbbe4ef0415033e8f2e64fdced36869ed9f
+c
+3notes/architecture/database/databaseTechnologies.md,3/9/393f456d88275cdd269c57f7c88907ff05e8dbc3
+9
+	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
