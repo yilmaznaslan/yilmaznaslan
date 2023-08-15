@@ -1,3 +1,5 @@
+package com.yilmaznaslan.tutorial.cryptography;
+
 import org.junit.jupiter.api.Test;
 
 import javax.crypto.Cipher;
@@ -6,7 +8,7 @@ import java.io.IOException;
 import java.security.*;
 import java.util.Base64;
 
-public class CryptographyTutorial {
+public class PublicPrivateKeys {
 
     @Test
     void test_generateKeyPairTutorial() {
