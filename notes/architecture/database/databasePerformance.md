@@ -5,8 +5,9 @@ applications that rely on it. Here are some general steps you can follow:
 
 1. Indexing:
 
-Make sure the right fields are indexed. Indexes dramatically speed up data retrieval but slow down data insertion,
-updating, and deletion. Therefore, it's important to find the right balance. The fields used in WHERE, JOIN, ORDER BY,
+Make sure the right fields are indexed. Indexes dramatically speed up data retrieval but slow down data **insertion**,
+**updating**, and **deletion**. Therefore, it's important to find the right balance. The fields used in WHERE, JOIN, 
+ORDER BY,
 and GROUP BY clauses are usually good candidates for indexing.
 
 2. Query Optimization:
