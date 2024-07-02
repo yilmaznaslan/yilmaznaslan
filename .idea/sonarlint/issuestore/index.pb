@@ -79,10 +79,6 @@ i
 9notes/software-development/communicationInMicroservice.md,b/f/bfcb11f2dbc6af331eeb87e93832f6b528785e21
 a
 1notes/software-development/dataTransferObjects.md,6/3/6327eabe7d6a7f5de5bfebca33c02ba74607a302
-V
-&notes/dataStructures/DataStructures.md,9/5/952d50ee1bcd0f367900b29aca539385481141ab
-b
-2notes/dataStructures/arrayListVsLinkedArrayList.md,d/f/df555cf880815555b86d5f176966241e7d14133d
 N
 projects/gpt-robotics/index.md,a/4/a4aab17dfde833790d09daca26441fadf5c2903a
 `
@@ -101,8 +97,6 @@ Z
 *notes/general/parameterPassingMechanism.md,2/c/2c607c26682d6e0a149f11b0608194331564db73
 Q
 !notes/java/collectionFramework.md,3/2/322f9a93557ea676458bd1f30121ddba70aca933
-R
-"notes/dataStructures/algorithms.md,f/1/f166c026ac926c91282415045dca71ac93880bb5
 X
 (notes/dataStructures/2.DataStructures.md,4/d/4d78f0b2251d9c12a941d1adbcafb5384e8c114b
 C
@@ -111,8 +105,6 @@ G
 basics/build.gradle.kts,2/a/2a248220aa80a2c33c45af730b2f77f75e937af9
 g
 7basics/src/test/java/datastructures/ArraysTutorial.java,c/7/c7dfc9c12ffb35650972e682439e7ab02c197b31
-_
-/basics/src/test/java/datastructures/Arrays.java,5/4/542f77b8c92d25ee41f2a289f1d4f4670cf33bc3
 j
 :basics/src/test/java/datastructures/ArrayListTutorial.java,2/3/231254e9090c00c69ee3c2e02cd6e6a08f79a141
 V
@@ -121,8 +113,6 @@ V
 &notes/dataStructures/whyDSAisUseful.md,b/0/b04124385e12d5d4db4c639029dcda3e9340d613
 M
 notes/dataStructures/1.dsa.md,0/8/084312281b9d7e4c49a72ab3d5419c17be960d2e
-U
-%notes/dataStructures/bigOAnnoation.md,e/5/e5ab68351d718bf37f4fd57ae15570f45bfb974d
 e
 5cryptography/src/test/resources/unsigned_document.xml,5/d/5d7a60b179f4dedefb00ff723397a577f36b0983
 c
@@ -198,3 +188,30 @@ M
 cryptography/build.gradle.kts,a/7/a793801c25cc2c07e6e0a70b5dbe6c878af057d9
 b
 2basics/src/test/java/streamapi/StreamTutorial.java,0/0/001f7e936595d82943eee3525c0d385fdd099022
+A
+notes/ai/index.md,0/b/0bc07f673ba654874f890daf72abeb66eeb15c68
+A
+notes/ai/isaac.md,9/5/9514c8616e707061222857e460087e9bcc4ddf26
+W
+'notes/dataStructures/4.bigOAnnoation.md,0/c/0c931e359ecf240d6acf448199e549abeec70c02
+G
+notes/robotics/index.md,6/b/6bd3224c66ed9c08ce621abca1012f661212f80b
+K
+notes/robotics/omniverse.md,9/9/994baf220ab1fc22b61ccdc8828617a182b62777
+J
+notes/robotics/proposal.md,6/4/64c276410b7d9e81a0d92907092ab6b4ebf85cf7
+I
+notes/robotics/propose.md,5/e/5e0192692baff2c89f8eed72998acfac1b4bc837
+>
+connect_aws.sh,a/4/a495e1592893cecf084007c3d1be3851d3dc8174
+D
+work_mac_os_2024.pem,2/3/236dee058c07854dbd7bb7b1834b8f3cc7f15993
+L
+projects/omniverse/README.md,3/8/38000275f9875683494b020ad16b17ddd34e2821
+F
+projects/rpiAcPoint.md,c/2/c24c57737fa179c0b59d3ef592186aa12c8c3eeb
+:
+
+aws_get.sh,5/b/5b8c1b699d19d2b5805eab09b0dc1b433e6ab217
+d
+4notes/dataStructures/3.arrayListVsLinkedArrayList.md,f/5/f5021e56d4dabb25828ba4969f44e11f14b8b8a2
