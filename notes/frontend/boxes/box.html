@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .container {
+            width: 300px;
+            height: 150px;
+            border: 2px solid black;
+            padding: 10px;
+            margin: 20px;
+        }
+
+        .overflow-visible {
+            overflow: visible;
+            background-color: lightcoral;
+        }
+
+        .overflow-hidden {
+            overflow: hidden;
+            background-color: lightblue;
+        }
+
+        .overflow-scroll {
+            overflow: scroll;
+            background-color: lightgreen;
+        }
+
+        .overflow-auto {
+            overflow: auto;
+            background-color: lightgoldenrodyellow;
+        }
+
+        .content {
+            width: 500px; /* Content is wider than the container */
+            height: 200px; /* Content is taller than the container */
+        }
+    </style>
+    <title>Overflow Property Example</title>
+</head>
+<body>
+<h2>Overflow: Visible</h2>
+<div class="container overflow-visible">
+    <div class="content">This content will overflow and be visible outside the container.</div>
+</div>
+
+<h2>Overflow: Hidden</h2>
+<div class="container overflow-hidden">
+    <div class="content">This content will overflow, but it will be clipped and not visible outside the container.</div>
+</div>
+
+<h2>Overflow: Scroll</h2>
+<div class="container overflow-scroll">
+    <div class="content">This content will overflow, and scrollbars will appear to allow scrolling to see the overflowing content.</div>
+</div>
+
+<h2>Overflow: Auto</h2>
+<div class="container overflow-auto">
+    <div class="content">This content will overflow, and scrollbars will appear only if needed to view the overflowing content.</div>
+</div>
+</body>
+</html>

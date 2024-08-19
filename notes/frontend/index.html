@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Position Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .sidebar {
+            position: relative;
+            width: 200px;
+            padding: 20px;
+            background-color: #f8f8f8;
+            height: 100vh;
+        }
+
+        .sidebar nav {
+            position: sticky;
+            top: 10px;
+            padding: 10px;
+            background-color: #ddd;
+            border: 1px solid #ccc;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        h2 {
+            margin-top: 600px; /* Add space to show sticky effect */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Sidebar with sticky navigation -->
+<div class="sidebar">
+    <nav>
+        <h3>Table of Contents</h3>
+        <ul>
+            <li><a href="#section1">Section 1</a></li>
+            <li><a href="#section2">Section 2</a></li>
+            <li><a href="#section3">Section 3</a></li>
+            <li><a href="#section4">Section 4</a></li>
+        </ul>
+    </nav>
+</div>
+
+<!-- Main content area -->
+<div class="content">
+    <h1>Main Content</h1>
+    <p>This is some introductory content before the sections begin.</p>
+
+    <h2 id="section1">Section 1</h2>
+    <p>This is the content for section 1...</p>
+
+    <h2 id="section2">Section 2</h2>
+    <p>This is the content for section 2...</p>
+
+    <h2 id="section3">Section 3</h2>
+    <p>This is the content for section 3...</p>
+
+    <h2 id="section4">Section 4</h2>
+    <p>This is the content for section 4...</p>
+
+    <h2>Inline Elements</h2>
+
+    <p>1. Anchor: <a href="https://www.example.com">This is a link</a></p>
+    <p>2. Abbreviation: <abbr title="Hypertext Markup Language">HTML</abbr></p>
+    <p>3. Acronym (deprecated): <acronym title="As Soon As Possible">ASAP</acronym></p>
+    <p>4. Bold: <b>This text is bold</b></p>
+    <p>5. Bi-Directional Override: <bdo dir="rtl">This text is right-to-left</bdo></p>
+    <p>6. Big (deprecated): <big>This text is big</big></p>
+    <p>7. Line Break: First line<br>Second line</p>
+    <p>8. Citation: <cite>The Great Gatsby</cite></p>
+    <p>9. Code: <code>let x = 5;</code></p>
+    <p>10. Definition: <dfn title="Hypertext Transfer Protocol">HTTP</dfn></p>
+    <p>11. Emphasis: <em>This text is emphasized</em></p>
+    <p>12. Italic: <i>This text is italicized</i></p>
+    <p>13. Image:
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat.<img src="https://via.placeholder.com/150" alt="Placeholder Image">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        consequat.</p>
+    <p>14. Input Field: <input type="text" placeholder="Enter text"></p>
+    <p>15. Keyboard Input: <kbd>Ctrl + C</kbd> to copy</p>
+    <p>16. Label: <label for="name">Name:</label> <input id="name" type="text"></p>
+    <p>17. Image Map:
+        <img src="https://via.placeholder.com/300" usemap="#example-map" alt="Example Map">
+        <map name="example-map">
+            <area shape="rect" coords="34,44,270,350" alt="Example" href="https://www.example.com">
+        </map>
+    </p>
+    <p>18. Marked Text:
+        <mark>This text is highlighted</mark>
+    </p>
+    <p>19. Quote: <q>This is a short quotation.</q></p>
+    <p>20. Strikethrough: <s>This text is struck through</s></p>
+    <p>21. Sample Output: <samp>Sample output text</samp></p>
+    <p>22. Dropdown List:
+        <select>
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+        </select>
+    </p>
+    <p>23. Small Text: <small>This text is small</small></p>
+    <p>24. Span: <span style="color: blue;">This text is inside a span</span></p>
+    <p>25. Strong Importance: <strong>This text is strongly important</strong></p>
+    <p>26. Subscript: H<sub>2</sub>O</p>
+    <p>27. Superscript: x<sup>2</sup></p>
+    <p>28. Text Area: <textarea rows="4" cols="50">This is a textarea</textarea></p>
+    <p>29. Time:
+        <time datetime="2024-08-19">August 19, 2024</time>
+    </p>
+    <p>30. Teletype/Text (deprecated): <tt>This text is in teletype</tt></p>
+    <p>31. Underline: <u>This text is underlined</u></p>
+    <p>32. Variable: The variable is <var>x</var></p>
+
+</div>
+
+
+</body>
+</html>
