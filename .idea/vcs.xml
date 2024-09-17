@@ -2,5 +2,8 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/notes/azure-ai/mslearn-ai-language" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/notes/azure-ai/mslearn-ai-vision" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/notes/azure-ai/mslearn-knowledge-mining" vcs="Git" />
   </component>
 </project>

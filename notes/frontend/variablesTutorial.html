@@ -1,0 +1,72 @@
+<html>
+
+
+<body>
+
+<h1> Variables</h1>
+
+<h2> Creating variables using let keyword</h2>
+
+<div id="container">
+</div>
+
+<div id="container_var">
+    Variables Created with var
+</div>
+
+<script>
+    const container = document.getElementById("container");
+    let div;
+    for (let i = 0; i < 5; i++) {
+        div = document.createElement("div");
+        div.textContent = "div: " + i + " Click me";
+
+        div.onclick = function () {
+            alert("This is box #: " + i);
+        };
+        container.appendChild(div);
+    }
+
+    const container_var = document.getElementById("container_var");
+    for (var i = 0; i < 5; i++) {
+        let div = document.createElement("div");
+        div.textContent = "div: " + i + " Click me";
+
+        div.onclick = function () {
+            alert("This is box #: " + i);
+        };
+        container_var.appendChild(div);
+    }
+
+
+    var age = 5;
+    var name = "Yilmaz";
+    console.log(`${name} has age of ${age}`);
+
+    {
+        var name = "Bilge"
+        console.log(`${name} has age of ${age} in the block`);
+    }
+
+    console.log(`${name} has age of ${age} in the global`);
+
+
+
+    let last_name = "Aslan";
+    console.log(`Lastname: ${last_name} has age of ${age}`);
+
+    {
+        let last_name = "Ciloglu"
+        console.log(`Lastname ${last_name} has age of ${age} in the block`);
+    }
+
+    console.log(`Lastname ${last_name} has age of ${age} in the global`);
+
+
+</script>
+
+</body>
+
+
+</html>
+

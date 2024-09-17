@@ -20,8 +20,6 @@ content effectively. Below is an overview of the main CSS layout types&technique
 
 ## 2. Flexbox (Flexible Box Layout)
 
-## 3. Grid Layout
-
 - **Description**: A one-dimensional layout model that allows you to align and distribute space among items in a
   container. It handles layout in a single direction (row or column).
 - **Use Case**: Aligning items within a container, distributing space dynamically, responsive designs.
@@ -150,3 +148,8 @@ These properties control how individual flex items behave within the flex contai
 
 Using these properties, you can create complex layouts with ease and precision, adjusting the behavior of both the
 container and its items.
+
+
+## 3. Grid Layout
+
+## 4. 
