@@ -1,0 +1,11 @@
+﻿version:v1.0,,,,,,,,,,,,,,,,
+Name [displayName] Required,User name [userPrincipalName] Required,Initial password [passwordProfile] Required,Block sign in (Yes/No) [accountEnabled] Required,First name [givenName],Last name [surname],Job title [jobTitle],Department [department],Usage location [usageLocation],Street address [streetAddress],State or province [state],Country or region [country],Office [physicalDeliveryOfficeName],City [city],ZIP or postal code [postalCode],Office phone [telephoneNumber],Mobile phone [mobile]
+Test User 1,testuser1@AslanGameGmbH.onmicrosoft.com, myPassword1234, No,,,,,,,,,,,,,
+Test User 2,testuser2@AslanGameGmbH.onmicrosoft.com, myPassword1234, No,,,,,,,,,,,,,
+Test User 3,testuser3@AslanGameGmbH.onmicrosoft.com, myPassword1234, No,,,,,,,,,,,,,
+Test User 4,testuser4@AslanGameGmbH.onmicrosoft.com, myPassword1234, No,,,,,,,,,,,,,
+Test User 5,testuser5@AslanGameGmbH.onmicrosoft.com, myPassword1234, No,,,,,,,,,,,,,
+Test User 6,testuser6@AslanGameGmbH.onmicrosoft.com, myPassword1234, No,,,,,,,,,,,,,
+Test User 7,testuser7@AslanGameGmbH.onmicrosoft.com, myPassword1234, No,,,,,,,,,,,,,
+Test User 8,testuser8@AslanGameGmbH.onmicrosoft.com, myPassword1234, No,,,,,,,,,,,,,
+Test User 9,testuser9@AslanGameGmbH.onmicrosoft.com, myPassword1234, No,,,,,,,,,,,,,
