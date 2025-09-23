@@ -1,1 +1,0 @@
-1. The previously created catalogs by user a user with `Identity Governance Administrator` is not visible to the user after he does not have this role any more even though he is still the owner of that catalog
