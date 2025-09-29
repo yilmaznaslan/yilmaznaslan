@@ -2,7 +2,13 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/certifications/azure-ai/mslearn-ai-language" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/certifications/azure-ai/mslearn-ai-services" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/certifications/azure-ai/mslearn-ai-vision" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/certifications/azure-ai/mslearn-knowledge-mining" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/certifications/azure-ai/mslearn-openai" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/notes-and-codes/azure-ai/mslearn-ai-language" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/notes-and-codes/azure-ai/mslearn-ai-services" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/notes-and-codes/azure-ai/mslearn-ai-vision" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/notes-and-codes/azure-ai/mslearn-knowledge-mining" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/notes-and-codes/azure-ai/mslearn-openai" vcs="Git" />
