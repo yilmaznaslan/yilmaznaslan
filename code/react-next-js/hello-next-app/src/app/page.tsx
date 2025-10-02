@@ -1,7 +1,8 @@
-'use client';
-import { useState } from 'react';
-import CarSearchButton1 from './carSearchButton1';
-import CarSearchButton2 from './carSearchButton2';
+"use client";
+import { useState } from "react";
+import CarSearchButton1 from "./carSearchButton1";
+import CarSearchButton2 from "./carSearchButton2";
+import TictactoeGame from "./tictactoeGame";
 
 interface ButtonMetricsProps {
   car1Count: number;
@@ -22,10 +23,8 @@ export default function Home() {
   const [car2Count, setCar2Count] = useState(0);
 
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <CarSearchButton1 onClick={setCar1Count} />
-      <CarSearchButton2 onClick={setCar2Count} />
-      <ButtonMetrics car1Count={car1Count} car2Count={car2Count} />
+    <div className="bg-white">
+      <TictactoeGame />;
     </div>
   );
 }
