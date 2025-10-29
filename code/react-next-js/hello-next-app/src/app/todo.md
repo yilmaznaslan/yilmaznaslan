@@ -1,2 +1,0 @@
-- [ ] After each mouse click, update currentMoveId and save the move(username, id, coordinate)
-- [ ] whenever currentMoveId is updated, get the whole movement List until(inc) that move. And for

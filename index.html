@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yilmaz Naci Aslan - Software Developer Portfolio</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --primary-color: #2563eb;
+        --secondary-color: #1e40af;
+        --text-dark: #1f2937;
+        --text-light: #6b7280;
+        --bg-light: #f9fafb;
+        --bg-white: #ffffff;
+        --accent: #10b981;
+      }
+
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: var(--text-dark);
+        background-color: var(--bg-light);
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      header {
+        background: var(--bg-white);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1.5rem 2rem;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--primary-color);
+        letter-spacing: -0.02em;
+        text-decoration: none;
+        transition: opacity 0.3s;
+      }
+
+      .logo:hover {
+        opacity: 0.7;
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: var(--text-dark);
+        transition: color 0.3s;
+      }
+
+      .nav-links a:hover {
+        color: var(--primary-color);
+      }
+
+      .hero {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 5rem 0;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        animation: fadeInUp 0.8s;
+      }
+
+      .hero p {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        animation: fadeInUp 1s;
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        animation: fadeInUp 1.2s;
+      }
+
+      .btn {
+        padding: 0.75rem 2rem;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .btn-primary {
+        background: white;
+        color: var(--primary-color);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn-secondary {
+        background: transparent;
+        color: white;
+        border: 2px solid white;
+      }
+
+      .btn-secondary:hover {
+        background: white;
+        color: var(--primary-color);
+      }
+
+      section {
+        padding: 4rem 0;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-bottom: 3rem;
+        color: var(--text-dark);
+        position: relative;
+      }
+
+      .section-title::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 4px;
+        background: var(--primary-color);
+      }
+
+      .about {
+        background: var(--bg-white);
+      }
+
+      .about-content {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 3rem;
+        align-items: center;
+      }
+
+      .about-text {
+        font-size: 1.1rem;
+        color: var(--text-light);
+        line-height: 1.8;
+      }
+
+      .skills {
+        background: var(--bg-light);
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+      }
+
+      .skill-card {
+        background: var(--bg-white);
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+
+      .skill-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .skill-card h3 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+      }
+
+      .skill-card ul {
+        list-style: none;
+        color: var(--text-light);
+      }
+
+      .skill-card li {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #e5e7eb;
+      }
+
+      .skill-card li:last-child {
+        border-bottom: none;
+      }
+
+      .experience {
+        background: var(--bg-white);
+      }
+
+      .timeline {
+        position: relative;
+        padding-left: 2rem;
+      }
+
+      .timeline::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: var(--primary-color);
+      }
+
+      .timeline-item {
+        position: relative;
+        padding: 2rem;
+        background: var(--bg-light);
+        margin-bottom: 2rem;
+        border-radius: 10px;
+        margin-left: 1rem;
+      }
+
+      .timeline-item::before {
+        content: '';
+        position: absolute;
+        left: -1.5rem;
+        top: 2rem;
+        width: 15px;
+        height: 15px;
+        background: var(--primary-color);
+        border-radius: 50%;
+      }
+
+      .timeline-item h3 {
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+      }
+
+      .timeline-item .duration {
+        color: var(--text-light);
+        font-style: italic;
+      }
+
+      .projects {
+        background: var(--bg-light);
+      }
+
+      .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .project-card {
+        background: var(--bg-white);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+
+      .project-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .project-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+
+      .project-card-content {
+        padding: 1.5rem;
+      }
+
+      .project-card h3 {
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+      }
+
+      .project-card p {
+        color: var(--text-light);
+        margin-bottom: 1rem;
+      }
+
+      .project-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .tag {
+        background: var(--bg-light);
+        padding: 0.25rem 0.75rem;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        color: var(--text-dark);
+      }
+
+      .achievements {
+        background: var(--bg-white);
+      }
+
+      .achievements-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+      }
+
+      .achievement-card {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 2rem;
+        border-radius: 10px;
+        text-align: center;
+      }
+
+      .achievement-card h3 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .achievement-card p {
+        opacity: 0.9;
+      }
+
+      .contact {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        text-align: center;
+      }
+
+      .contact-content {
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .contact-icons {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .contact-icons a {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        transition: transform 0.3s;
+      }
+
+      .contact-icons a:hover {
+        transform: scale(1.2);
+      }
+
+      .contact-icons svg {
+        width: 100%;
+        height: 100%;
+        fill: white;
+      }
+
+      .contact-icons a.linkedin-icon:hover svg {
+        fill: #0077b5;
+      }
+
+      .contact-icons a.github:hover svg {
+        fill: #ffffff;
+      }
+
+      .contact-icons a:hover svg {
+        fill: #ffffff;
+      }
+
+      footer {
+        background: var(--text-dark);
+        color: white;
+        text-align: center;
+        padding: 2rem 0;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 2rem;
+        }
+
+        .hero p {
+          font-size: 1.2rem;
+        }
+
+        .about-content {
+          grid-template-columns: 1fr;
+        }
+
+        .nav-links {
+          gap: 1rem;
+        }
+
+        .hero-buttons {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="container">
+        <a href="#" class="logo">Yilmaz Naci Aslan</a>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="container">
+        <h1>Software Developer</h1>
+        <p>Building scalable backend systems & exploring fullstack development</p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">View My Work</a>
+          <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+          <div>
+            <img src="profilpic.jpg" alt="Profile Picture" style="width: 100%; border-radius: 10px" />
+          </div>
+          <div class="about-text">
+            <p>
+              I am a software developer with 4 years of experience working in IT consultancy, primarily as a Java
+              backend developer on large-scale customer-facing projects.
+            </p>
+            <p>
+              While my focus has been on backend development, I also have experience in web application development
+              using React and React Native. I'm passionate about continuous learning and technology exploration, which
+              has led me to expand my skill set beyond Java.
+            </p>
+            <p>
+              My journey from mechanical engineering to software development demonstrates my adaptability and
+              problem-solving abilities. I'm currently transitioning to become a fullstack developer and exploring
+              modern tech stacks including Node.js, React, and Elasticsearch.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="skills">
+      <div class="container">
+        <h2 class="section-title">Skills & Technologies</h2>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <h3>Backend</h3>
+            <ul>
+              <li>Java</li>
+              <li>Spring Boot</li>
+              <li>Microservices</li>
+              <li>REST APIs</li>
+              <li>Node.js</li>
+            </ul>
+          </div>
+          <div class="skill-card">
+            <h3>Frontend</h3>
+            <ul>
+              <li>React</li>
+              <li>React Native</li>
+              <li>JavaScript</li>
+              <li>HTML/CSS</li>
+              <li>Next.js</li>
+            </ul>
+          </div>
+          <div class="skill-card">
+            <h3>Database & Tools</h3>
+            <ul>
+              <li>SQL Databases</li>
+              <li>NoSQL</li>
+              <li>Elasticsearch</li>
+              <li>Git</li>
+              <li>Docker</li>
+            </ul>
+          </div>
+          <div class="skill-card">
+            <h3>Cloud & DevOps</h3>
+            <ul>
+              <li>Azure</li>
+              <li>AWS</li>
+              <li>CI/CD</li>
+              <li>Infrastructure</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="experience">
+      <div class="container">
+        <h2 class="section-title">Experience</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>Backend Developer (IT Consultancy)</h3>
+            <div class="duration">2020 - Present</div>
+            <p>
+              Working as a Java backend developer in large-scale customer-facing projects. Implemented business
+              features, performed log analysis, and resolved bugs in microservice architectures.
+            </p>
+          </div>
+          <div class="timeline-item">
+            <h3>Career Transition</h3>
+            <div class="duration">Background</div>
+            <p>
+              Successfully transitioned from mechanical engineering to software development, demonstrating adaptability
+              and passion for technology through self-learning and skill development.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects">
+      <div class="container">
+        <h2 class="section-title">Projects & Achievements</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div style="height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%)"></div>
+            <div class="project-card-content">
+              <h3>Microservices Error Handling</h3>
+              <p>
+                Improved error handling mechanism in microservice architecture, enhancing system reliability and
+                debugging capabilities.
+              </p>
+              <div class="project-tags">
+                <span class="tag">Java</span>
+                <span class="tag">Spring Boot</span>
+                <span class="tag">Microservices</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div style="height: 200px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%)"></div>
+            <div class="project-card-content">
+              <h3>Frontend Development</h3>
+              <p>
+                Explored React and React Native development, building user-facing applications and transitioning from
+                backend-focused to fullstack development.
+              </p>
+              <div class="project-tags">
+                <span class="tag">React</span>
+                <span class="tag">React Native</span>
+                <span class="tag">JavaScript</span>
+              </div>
+            </div>
+          </div>
+          <div class="project-card">
+            <div style="height: 200px; background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)"></div>
+            <div class="project-card-content">
+              <h3>Azure AI Certification</h3>
+              <p>
+                Acquired Azure AI developer certificate, demonstrating commitment to continuous learning and exploring
+                new AI technologies.
+              </p>
+              <div class="project-tags">
+                <span class="tag">Azure</span>
+                <span class="tag">AI</span>
+                <span class="tag">Cloud</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="achievements">
+      <div class="container">
+        <h2 class="section-title">Strengths & Achievements</h2>
+        <div class="achievements-grid">
+          <div class="achievement-card">
+            <h3>Problem-Solving</h3>
+            <p>
+              Quick adaptability & onboarding into new projects and tech stacks. Complex problem-solving expertise
+              gained from consultancy work.
+            </p>
+          </div>
+          <div class="achievement-card">
+            <h3>Continuous Learning</h3>
+            <p>
+              Actively exploring new tools and AI technologies. Demonstrated ability to transition from backend to
+              frontend development.
+            </p>
+          </div>
+          <div class="achievement-card">
+            <h3>Team Collaboration</h3>
+            <p>
+              Collaborated with frontend/backend engineers, designers, product managers, and QA in agile environments
+              with sprints and daily standups.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="contact-content">
+          <h2 class="section-title" style="color: white">Get In Touch</h2>
+          <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+          <div class="contact-icons">
+            <a href="mailto:yilmazn.aslan@gmail.com" title="Email">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                />
+              </svg>
+            </a>
+            <a href="https://linkedin.com/in/yilmaz-naci-aslan" title="LinkedIn" class="linkedin-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                />
+              </svg>
+            </a>
+            <a href="https://github.com/yilmaznaslan" title="GitHub" class="github">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  fill-rule="evenodd"
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <p>&copy; 2024 Yilmaz Naci Aslan. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
