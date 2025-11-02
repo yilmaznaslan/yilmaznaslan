@@ -1,66 +1,41 @@
-# Personal Learning Repository
+# Mongodb Commands
 
-A comprehensive collection of my learning materials, code samples, and documentation covering various technologies and concepts.
+`show dbs`
+`show collections`
 
-## 📚 Repository Structure
+`use <dbname>`
 
-### 🎯 Learning Paths
+`db.dropDatabase()`
 
-- **Certifications/** - Study materials and notes for professional certifications
-- **Tutorials/** - Step-by-step learning materials and code examples
-- **Notes/** - Quick reference guides and conceptual documentation
+`db.mycollection.insertOne({})`
+`db.mycollection.insertMany([{field1: "value1"}, {field2: "value2"}])`
 
-### 💻 Code Examples
+## Importing CSV Files
 
-- **Java/** - Java fundamentals, data structures, and frameworks
-- **JavaScript/** - Frontend development and modern JavaScript
-- **Python/** - Scripts and automation tools
+MongoDB provides `mongoimport` tool to import CSV files directly into collections:
 
-### 🏗️ Architecture & Design
+```bash
+mongoimport --db <database_name> --collection <collection_name> --type csv --headerline --file <path/to/file.csv>
+```
 
-- **System Design/** - Architecture patterns and design principles
-- **Database/** - Database technologies and optimization
-- **Cloud/** - AWS, Azure, and cloud computing resources
+Options:
 
-### 🎓 Interview Preparation
+- `--db`: Database name
+- `--collection`: Collection name
+- `--type csv`: Specify CSV format
+- `--headerline`: Use first line as field names
+- `--file`: Path to CSV file
+- `--drop`: Drop collection before importing (optional)
+- `--ignoreBlanks`: Ignore blank fields (optional)
 
-- **Interview/** - Technical interview questions and solutions
-- **Algorithms/** - Data structures and algorithm implementations
+Example:
 
-## 🚀 Quick Start
+```bash
+mongoimport --db mydb --collection users --type csv --headerline --file ./users.csv
+```
 
-1. Browse the relevant directory for your area of interest
-2. Check the README files in each subdirectory for specific guidance
-3. Use the search functionality to find specific topics
+If CSV doesn't have headers, specify fields:
 
-## 📖 Content Categories
-
-- **Azure AI** - Microsoft Azure AI services and machine learning
-- **AWS** - Amazon Web Services and cloud architecture
-- **Java** - Core Java, Spring Framework, and enterprise development
-- **Frontend** - HTML, CSS, JavaScript, Vue.js, and React Native
-- **Database** - PostgreSQL, JPA, Hibernate, and database design
-- **Cryptography** - Security concepts and encryption techniques
-- **Testing** - TDD, BDD, and testing frameworks
-
-## 🔧 Tools & Technologies
-
-- Java 8+ with Gradle
-- JavaScript/TypeScript
-- Python
-- Vue.js
-- Spring Framework
-- PostgreSQL
-- AWS & Azure Cloud Services
-
-## 📝 Contributing
-
-This is a personal learning repository. Feel free to:
-
-- Use the code examples for your own learning
-- Suggest improvements or corrections
-- Share additional resources
-
-## 📄 License
-
-This repository contains educational content and code samples for learning purposes.
+```bash
+mongoimport --db mydb --collection users --type csv --fields name,email,age --file ./users.csv
+```

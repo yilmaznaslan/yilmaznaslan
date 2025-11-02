@@ -9,6 +9,7 @@ Technical interview questions, solutions, and preparation materials.
 - Multithreading and concurrency
 - System design fundamentals
 - Kafka and messaging systems
+- MongoDB and database technologies
 - Company-specific interview experiences
 
 ## 🎯 Preparation Strategy
