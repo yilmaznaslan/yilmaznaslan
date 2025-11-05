@@ -131,3 +131,10 @@ venv/
 .mypy_cache/
 .dmypy.json
 dmypy.json
+
+
+# any nodemodules from any sub directory
+node_modules/
+package-lock.json
+*.log
+

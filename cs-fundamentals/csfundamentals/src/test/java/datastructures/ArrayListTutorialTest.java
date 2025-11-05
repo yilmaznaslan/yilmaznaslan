@@ -5,7 +5,14 @@ import org.junit.jupiter.api.Test;
 
 import java.util.*;
 
-class ArrayListTutorial {
+class ArrayListTutorialTest {
+
+
+    @Test
+    void immutableCollectionsFromSecureArray() {
+        ArrayList<Integer> ages = new ArrayList<>(List.of(1, 2, null, 54));
+        Assertions.assertTrue(ages.isEmpty());
+    }
 
 
     /**
@@ -15,6 +22,13 @@ class ArrayListTutorial {
     void emptyList() {
         ArrayList<Integer> ages = new ArrayList<>();
         Assertions.assertTrue(ages.isEmpty());
+    }
+
+
+    @Test
+    void emptyListFilled() {
+        ArrayList<Integer> ages = new ArrayList<>(Collections.nCopies(5, 10));
+        Assertions.assertFalse(ages.isEmpty());
     }
 
 

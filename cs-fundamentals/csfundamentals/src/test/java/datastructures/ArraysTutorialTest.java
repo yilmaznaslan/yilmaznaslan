@@ -10,12 +10,13 @@ import java.util.Arrays;
  * Arrays: An array is a container object that holds a fixed number of values of a single type.
  * The length of an array is established when the array is created. After creation, its length is fixed.
  */
-class ArraysTutorial {
+class ArraysTutorialTest {
 
 
     @Test
     void creation_and_initialization() {
         int[] ages = new int[5];
+        int len = ages.length;
         ages[0] = 1;
         Arrays.stream(ages).forEach(as -> System.out.println(as + 5));
 

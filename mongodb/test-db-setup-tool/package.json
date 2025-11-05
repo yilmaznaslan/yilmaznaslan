@@ -1,0 +1,22 @@
+{
+  "name": "mongodb-data-generator",
+  "version": "1.0.0",
+  "description": "Generate large datasets for MongoDB performance practice",
+  "main": "generate-data.js",
+  "scripts": {
+    "generate": "node generate-data.js",
+    "generate:1m": "TOTAL_DOCS=1000000 node generate-data.js",
+    "generate:5m": "TOTAL_DOCS=5000000 node generate-data.js",
+    "generate:10m": "TOTAL_DOCS=10000000 node generate-data.js"
+  },
+  "keywords": [
+    "mongodb",
+    "data-generation",
+    "performance"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongodb": "^6.3.0"
+  }
+}

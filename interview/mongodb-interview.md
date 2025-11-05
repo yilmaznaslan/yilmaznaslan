@@ -134,8 +134,8 @@ Comprehensive guide to MongoDB interview topics for backend developer positions.
 
 ```javascript
 db.orders.aggregate([
-  { $match: { status: 'completed' } },
-  { $group: { _id: '$customerId', total: { $sum: '$amount' } } },
+  { $match: { status: "completed" } },
+  { $group: { _id: "$customerId", total: { $sum: "$amount" } } },
   { $sort: { total: -1 } },
   { $limit: 10 },
 ]);
@@ -188,13 +188,13 @@ db.orders.aggregate([
 4. **Text Index**: For full-text search
 
    ```javascript
-   db.articles.createIndex({ title: 'text', content: 'text' });
+   db.articles.createIndex({ title: "text", content: "text" });
    ```
 
 5. **Geospatial Index**: For location data
 
    ```javascript
-   db.places.createIndex({ location: '2dsphere' });
+   db.places.createIndex({ location: "2dsphere" });
    ```
 
 6. **TTL Index**: Automatically delete documents after expiration
@@ -205,7 +205,10 @@ db.orders.aggregate([
 
 7. **Partial Index**: Only indexes documents matching filter
    ```javascript
-   db.users.createIndex({ email: 1 }, { partialFilterExpression: { active: true } });
+   db.users.createIndex(
+     { email: 1 },
+     { partialFilterExpression: { active: true } }
+   );
    ```
 
 **Q: How do compound indexes work and what is index prefix?**
@@ -572,8 +575,8 @@ db.users.find({
 db.users.aggregate([
   {
     $group: {
-      _id: '$department',
-      avgSalary: { $avg: '$salary' },
+      _id: "$department",
+      avgSalary: { $avg: "$salary" },
       count: { $sum: 1 },
     },
   },
@@ -584,7 +587,11 @@ db.users.aggregate([
 **Q: Write a query to update user salary and return the updated document.**
 
 ```javascript
-db.users.findOneAndUpdate({ email: 'user@example.com' }, { $inc: { salary: 5000 } }, { returnDocument: 'after' });
+db.users.findOneAndUpdate(
+  { email: "user@example.com" },
+  { $inc: { salary: 5000 } },
+  { returnDocument: "after" }
+);
 ```
 
 **Q: How would you find users who have not logged in for 30 days?**
