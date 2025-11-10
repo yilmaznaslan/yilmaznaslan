@@ -14,3 +14,11 @@ Running and building
 - `npm run start` (Start the app, compiled JS)
 - `npm run start:dev` Staert the app in watch mode, auto-reload on save
 - `npm run build` Compile TypeScrtip -> JavaScript
+
+Create a next.js app
+
+```bash
+npx create-next-app@latest my-portfolio
+cd my-portfolio
+npm run dev
+```
