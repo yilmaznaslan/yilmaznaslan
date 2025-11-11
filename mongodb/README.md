@@ -6,6 +6,7 @@
 `show collections`
 `use <dbname>`
 `db.dropDatabase()`
+`db.users.drop()`: drop a collection
 
 ## CRUD Operations
 

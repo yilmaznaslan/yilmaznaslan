@@ -9,33 +9,49 @@ tags: ["mongodb", "scaling", "mongodb-sharding"]
 
 This post distills the video Scaling MongoDB: Essential scaling strategies and the transcript at blog/speech.txt.
 
-Video: https://www.youtube.com/watch?v=_CbHeqq79BA&t
-Transcript: blog/speech.txt
-
 Overview
 
-Why scale?
+## Why do we scale?
 
 - CPU, RAM, disk I/O throughput, and storage capacity drive scaling.
 
-Vertical vs Horizontal scaling
+## Scaling Options
 
-Vertical scaling
+- Vertical Scaling
+- Horizontal scaling
+
+## Vertical scaling
 
 - Upgrade to a bigger machine when resources run out.
 - Simple but capped by hardware and cost.
 
-Horizontal scaling
+## Horizontal scaling
 
 - Add more machines (shards) and distribute data to grow linearly.
 - The key challenge is data partitioning and choosing a good shard key.
 
-Sharded collections
+### MongoDB Sharding Strategies
+
+There are two primary ways to distribute workloas in a sharded clusters:
+
+1. **Moving collections on dedicated shards**
+   asd
+2.
+
+### How to Scale Horizontally
+
+- Sharding: Sharded Collections
+
+#### Sharding: Sharded collections
 
 - A collection can be split across shards to use more compute, storage, and RAM.
 - The shard key affects distribution efficiency.
 
-Managing shard movement
+```bash
+db.adminCommand({shardCollection:"taxi.drivers", key:{**driverID**:1}})
+```
+
+#### Sharding: Managing shard movement
 
 - Move collection: relocate a collection to another shard.
 - Unshard collection: return a sharded collection to a single shard.
@@ -51,17 +67,6 @@ When to consider these strategies
 
 - Start with vertical scaling, then shift to horizontal as data grows.
 - Plan shard keys, monitor distribution, and use unsharing when appropriate.
-
-Further reading
-
-- Transcript: blog/speech.txt
-- Video: https://www.youtube.com/watch?v=_CbHeqq79BA&t
-
-Appendix
-Read the transcript here: blog/speech.txt
-
-Author: Your Name
-Date: 2025-11-10
 
 ## Extending MongoDB scaling: deeper dive and practical steps
 
@@ -200,5 +205,4 @@ sh.unshardCollection("taxi.drivers");
 
 ### References
 
-- Transcript: blog/speech.txt
-- Video: https://www.youtube.com/watch?v=_CbHeqq79BA&t
+- https://www.youtube.com/watch?v=_CbHeqq79BA&t
