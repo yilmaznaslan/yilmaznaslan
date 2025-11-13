@@ -53,7 +53,7 @@ class ArraysTutorialTest {
     @Test
     void arrays_utils() {
         int[] ages = {5, 6, 2, 1, 9};
-
+        
         // Wrong answer
         int value = Arrays.binarySearch(ages, 1);
         System.out.println(value);
