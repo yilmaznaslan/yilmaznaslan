@@ -1,0 +1,1 @@
+- If a single mongoDB replica set is routenly above 70-80% CPU or disk I/O under loadm you are entering high-volume territory.
