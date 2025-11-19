@@ -40,6 +40,7 @@ class ArrayListTutorialTest {
     @Test
     void initialCapacity() {
         ArrayList<String> list = new ArrayList<>(10);
+        list.add(2, "");
     }
 
     /**

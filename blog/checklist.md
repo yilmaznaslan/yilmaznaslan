@@ -14,3 +14,5 @@
 - [ ] Performance: Optimize application performance on the back-end (Java services)
 
 - [ ] ORM (Hibernate, JPA)
+- [ ] AWS (S3, Dynamo, RDS, ECS, IAM, CloudWatch, Lambda, etc.) using IaC tools like Terraform or Serverless.
+- [ ] , such as CI/CD, TDD, BDD, DDD, and Design Patterns

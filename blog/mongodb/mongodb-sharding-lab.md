@@ -14,3 +14,6 @@ docker run -d \
 ```bash
 node blog/mongodb/data-generator/generate-ecommerce.js
 ```
+
+Before sharding a collection, the database must be shard-enabled first
+`
