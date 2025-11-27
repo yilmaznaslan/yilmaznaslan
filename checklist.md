@@ -16,3 +16,5 @@
 - [ ] ORM (Hibernate, JPA)
 - [ ] AWS (S3, Dynamo, RDS, ECS, IAM, CloudWatch, Lambda, etc.) using IaC tools like Terraform or Serverless.
 - [ ] , such as CI/CD, TDD, BDD, DDD, and Design Patterns
+- [ ] OOP principles
+- [ ] Multithread concurrency

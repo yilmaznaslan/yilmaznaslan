@@ -1,11 +1,5 @@
 # Interview Preparation for Java Backend Developer
 
-Chat GPT4 prompt:
-> I am a java software developer. Prepare me for a java backend developer position interview at Klarna Bank AB.
-> Tell me some key areas to focus on. For each focus area make some bullet points that are important for that area. 
-> For each bullet point ask at least 2-3 sample example interview questions&answers I might encounter during my 
-> interview. 
-
 Klarna is a leading global payments and shopping service, so it's essential to be well-prepared for your interview.
 As a Java backend developer at Klarna, you'll be expected to have a strong understanding of Java, related technologies, and
 best practices. Here are some key areas to focus on and some example questions you might encounter during your
@@ -30,10 +24,10 @@ interview:
 - Databases and data storage:
 
 3. SQL and NoSQL databases (e.g., PostgreSQL, MySQL, MongoDB, Cassandra)
-ACID properties and CAP theorem
-Database schema design and normalization
-Query optimization and performance tuning
-Web services and APIs:
+   ACID properties and CAP theorem
+   Database schema design and normalization
+   Query optimization and performance tuning
+   Web services and APIs:
 
 RESTful API design principles
 HTTP methods, status codes, and headers

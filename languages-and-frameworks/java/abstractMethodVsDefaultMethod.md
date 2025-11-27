@@ -5,7 +5,7 @@ explanation of each with sample code:
 
 1. Abstract methods:
 
-- These are methods declared in an interface without any implementation.
+- These are methods **declared** in an interface without any implementation.
 - Any class implementing the interface must provide an implementation for these methods, unless the class itself is
   abstract.
 - Prior to Java 8, interfaces could only have abstract methods.
@@ -67,10 +67,3 @@ public class Main {
 
 In this example, the Dog class implements the Animal interface. It provides an implementation for the abstract method
 makeSound() and uses the default implementation of the eat() method.
-
-## Resource
-
-Chat GPTPrompt:
-> What is default method and abstract methods in interfaces ? 
-> - Consider java 17
-> - Explain by a sample java code

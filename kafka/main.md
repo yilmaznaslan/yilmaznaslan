@@ -10,7 +10,7 @@
 
 ### Broker
 
-Brokers hols the **queue**
+Brokers holds the **queue**
 
 ### Topic
 
@@ -24,12 +24,12 @@ Note:
 ### Partition
 
 - Each topic is plit into partitions, which are ordered, immutable sequence of messages
-- Partitions allow parallesim (multiple consumers readin simultaenously)
+- Partitions allow parallesim (multiple consumers reading simultaenously)
 - Each message in a partition has a unique offset(its poisiton in the partition)
 
 - Partitions are fixed and configured per topic (e.g., 3, 6, 12, 20, 100)
 
-- Key in the messages determines which partigion a message goes to
+- **Key** in the messages determines which partigion a message goes to
 
 ### Consumer Groups
 
