@@ -9,6 +9,17 @@ class StringQuestions {
 
 
     @Test
+    void testLength(){
+        String body = "hä";
+        Assertions.assertEquals(body.length(), 2);
+
+
+        Assertions.assertEquals(body.getBytes().length,  3);
+
+
+    }
+
+    @Test
     void Stringbasics() {
         String word1 = "hello";
         //word1.charAt(10);

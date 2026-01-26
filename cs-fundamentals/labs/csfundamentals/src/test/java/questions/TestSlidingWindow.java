@@ -3,11 +3,11 @@ package questions;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 
 class TestSlidingWindow {
-
 
     // --- Fixed size sliding window ----
     @Test
@@ -16,10 +16,17 @@ class TestSlidingWindow {
         int[] input = {2, 1, 5, 1, 3, 2};
         int k = 3;
         int expected = 9;
+        Assertions.assertEquals(expected, demo1(input, k));
+    }
 
-        Assertions.assertEquals(expected, demo1(input, 3));
+    private int solution1(int[] arr, int k){
+        int result = 0;
+        ArrayList<Integer> results = new ArrayList<>();
+        int length = arr.length;
+        int lastPossibleArrayStartIndex = arr.length - k; // length= 6
 
 
+        return result;
     }
 
     private int demo1(int[] input, int k) {

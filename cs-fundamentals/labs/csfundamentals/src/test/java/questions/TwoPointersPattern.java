@@ -117,4 +117,48 @@ class TwoPointersPattern {
 
         return horizontalDistance * minVerticalHeight;
     }
+
+    @Test
+    void findSymmetricNumbers(){
+
+        int input = 1234;
+        Assertions.assertEquals(2, getDigitAtIndex(input, 2));
+        Assertions.assertEquals(4, getDigitAtIndex(input, 0));
+
+        Assertions.assertTrue(isSymmetric(12321));
+        Assertions.assertTrue(isSymmetric(1221));
+
+        Assertions.assertFalse(isSymmetric(13241));
+
+    }
+
+    boolean isSymmetric(int input){
+        boolean result = true;
+
+        int basamakSayisi = (int) Math.round(Math.log10(input));
+        int leftCounter = basamakSayisi;
+        int rightCounter = 0;
+
+        while( leftCounter > rightCounter){
+
+            int numberLeft = getDigitAtIndex(input, leftCounter);
+            int numberRight = getDigitAtIndex(input, rightCounter);
+            if( numberRight != numberLeft) {
+                return false;
+            }
+
+            leftCounter --;
+            rightCounter ++;
+        }
+
+
+        return result;
+    }
+
+
+    // input = 1234, index = 2 => 3)
+    int getDigitAtIndex(int input, int index){
+        int inputUntilIndex = (int) (input % Math.pow(10, index+1));
+        return (int) Math.round( inputUntilIndex / Math.pow(10, index));
+    }
 }

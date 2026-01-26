@@ -84,6 +84,18 @@ public class Main {
 }
 ```
 
+#### Why `<T>` is required
+
+If you removed `<T>`:
+
+> public void printArray(T[] arr) { // Compiler error
+
+The compiler would say:
+
+> Cannot resolve symbol `T`
+
+Because Java needs to know where `T` is declared. `<T>`is that decleration.
+
 ### Ex: 3 Bounded type Parameters
 
 You can restrcit what types a generic accepts using **bounds**.
@@ -120,7 +132,7 @@ Wildcars using LowerBound
         }
     }
 
-    public void printNumbers(List<? super Number> arr){
+    public void printNumbers(List<? super Integer> arr){
         for(Number i: arr){
         System.out.println(i.intValue()*2);
         }
@@ -129,6 +141,11 @@ Wildcars using LowerBound
   }
 
 ```
+
+`List<? super Integer>` means:
+
+- The list can be of `Integer`
+- OR any superclass of `Integer`(`Number`, `Object`)
 
 Double Generic
 
