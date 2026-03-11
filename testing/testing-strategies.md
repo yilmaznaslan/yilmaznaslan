@@ -1,19 +1,35 @@
-## Testing Strategies: TDD, BDD, GWT, and Red-Green-Refactor
+## Testing Strategies and Techniques
 
-Both **TDD (Test Driven Development)** and **BDD (Behavior Driven Development)** are testing methodologies used in software
+This guide summarizes several testing approaches and techniques commonly used in modern software development:
+
+- **TDD (Test-Driven Development)** and **BDD (Behavior-Driven Development)**
+- **Given-When-Then (GWT)** for structuring tests
+- The **Red-Green-Refactor** loop
+- **Fuzz testing**
+- **Mutation testing**
+
+Use it as a quick reference when designing or reviewing your test strategy.
+
+---
+
+## TDD vs BDD
+
+Both **TDD (Test-Driven Development)** and **BDD (Behavior-Driven Development)** are testing methodologies used in software
 development. Both aim to improve software quality and reliability by introducing a structured approach to testing.
 
-In **unit testing**, the focus is on testing small and isolated pieces of code, usually at the function or method
-level. This allows for faster feedback and easier debugging of issues. **Assertions** are an important part of unit
-testing, as they provide a way to check that the expected output is produced for a given input.
+In **unit testing**, the focus is on testing small and isolated pieces of code, usually at the function or method level.
+This allows for faster feedback and easier debugging of issues. **Assertions** are an important part of unit testing, as
+they provide a way to check that the expected output is produced for a given input.
 
 When it comes to using assertions in BDD and TDD, the difference lies in the way the tests are written and the language
-used to describe them. BDD is a more high-level approach to testing that emphasizes the **behavior** of the system rather
-than the implementation details. In BDD, tests are written in a more natural language that describes the behavior of the
-system in a way that non-technical stakeholders can understand.
+used to describe them:
 
-In contrast, TDD is a more technical approach to testing that emphasizes the correctness of the **implementation**. In
-TDD, tests are written before the actual code is written, and the code is then developed iteratively to pass the tests.
+- **BDD** is a more high-level approach to testing that emphasizes the **behavior** of the system rather than the
+  implementation details. Tests are written in a more natural language that describes the behavior of the system in a way
+  that non-technical stakeholders can understand.
+
+- **TDD** is a more technical approach to testing that emphasizes the correctness of the **implementation**. Tests are
+  written before the actual code, and the code is then developed iteratively to pass the tests.
 
 In terms of assertions, both BDD and TDD use assertions to check the expected output of a given input. However,
 BDD-style assertions are often more descriptive and focus on the behavior of the system, while TDD-style assertions tend
@@ -25,43 +41,119 @@ the choice ultimately depends on the specific needs and goals of the project.
 
 ---
 
-## Given-When-Then (GWT) Comments
+### TDD: practical example (developer-focused)
 
-**GIVEN-WHEN-THEN (GWT)** is a format for writing automated tests that is often used in Behavior-Driven Development (BDD)
-and Test-Driven Development (TDD) approaches. The format consists of three parts:
+Assume we are implementing a simple `Calculator.add(int a, int b)` method.
 
-- **GIVEN**: This part defines the initial context or state of the system, which includes any preconditions that must be
-  satisfied before the test can be executed. It sets up the necessary conditions for the test to be performed.
+```java
+class CalculatorTest {
 
-- **WHEN**: This part defines the specific action or event that is being tested, which is the behavior or functionality that
-  the system should exhibit. It is the part where the system is triggered to perform an action or respond to an event.
+    @Test
+    void add_shouldReturnSumOfTwoIntegers() {
+        // arrange
+        Calculator calculator = new Calculator();
 
-- **THEN**: This part defines the expected outcome or result of the action or event. It describes what the system should
-  produce or how it should behave in response to the action or event defined in the WHEN section.
+        // act
+        int result = calculator.add(2, 3);
+
+        // assert
+        assertEquals(5, result);
+    }
+}
+```
+
+- **Intent**: Focus on method behavior and correctness.
+- **Audience**: Primarily developers.
+- **Style**: Technical naming (`add_shouldReturnSumOfTwoIntegers`), often written before implementation as part of the
+  Red-Green-Refactor loop.
+
+### BDD: practical example (business-language scenarios)
+
+A BDD-style test typically starts from a human-readable scenario (e.g., using Cucumber).
+
+**Feature file:**
+
+```gherkin
+Feature: Calculator addition
+
+  Scenario: Add two positive numbers
+    Given a calculator
+    When I add 2 and 3
+    Then the result should be 5
+```
+
+**Step definitions:**
+
+```java
+public class CalculatorSteps {
+
+    private Calculator calculator;
+    private int result;
+
+    @Given("a calculator")
+    public void a_calculator() {
+        calculator = new Calculator();
+    }
+
+    @When("I add {int} and {int}")
+    public void i_add_and(int a, int b) {
+        result = calculator.add(a, b);
+    }
+
+    @Then("the result should be {int}")
+    public void the_result_should_be(int expected) {
+        assertEquals(expected, result);
+    }
+}
+```
+
+- **Intent**: Describe behavior in a language that business and technical people can both understand.
+- **Audience**: Whole team (product, QA, developers).
+- **Style**: Uses scenarios and steps that can be discussed in refinement sessions, then automated.
+
+### Collaboration in BDD
+
+BDD is not something only “business people” do:
+
+- **Domain experts / product owners** help define and review examples and scenarios in natural language.
+- **Developers and QA / SDETs** turn those scenarios into executable specifications (step definitions and tests) and
+  implement the code to satisfy them.
+
+In practice, TDD is usually **developer-driven**, while BDD is a **collaborative practice** with the automation work still
+done by technical team members.
+
+### Given-When-Then (GWT) inside BDD and TDD
+
+**GIVEN-WHEN-THEN (GWT)** is a format for writing automated tests that originated in BDD, but is now widely reused in TDD
+tests as well. The format consists of three parts:
+
+- **GIVEN**: Initial context or state of the system (preconditions).
+- **WHEN**: The action or event being tested (the behavior or functionality).
+- **THEN**: The expected outcome or result of that action.
 
 By using the GWT format, tests become more structured and easier to read and understand. This helps to ensure that tests
 are comprehensive and that all aspects of the system's behavior are tested thoroughly.
 
-Example:
+You can use GWT in:
+
+- **BDD scenarios** (e.g., Gherkin `Given/When/Then` steps).
+- **TDD-style unit tests** as comments or method names:
 
 ```java
 @Test
-public void testCalculateDiscount() {
+void givenTwoNumbers_whenAdding_thenReturnTheirSum() {
     // GIVEN
-    int orderTotal = 100;
-    Customer customer = new Customer("John Doe");
+    Calculator calculator = new Calculator();
 
     // WHEN
-    int discount = customer.calculateDiscount(orderTotal);
+    int result = calculator.add(2, 3);
 
     // THEN
-    assertEquals(10, discount);
+    assertEquals(5, result);
 }
 ```
 
----
-
-## Red-Green-Refactor Loop
+## Red-Green-Refactor (RGR) Loop
 
 The **Red-Green-Refactor (RGR) loop** is a popular software development technique used in Test-Driven Development (TDD) that
 involves three phases:
