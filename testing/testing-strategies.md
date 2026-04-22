@@ -211,3 +211,216 @@ From the ratio of killed vs. surviving mutants, you get a **mutation score**, wh
 catching defects. This goes beyond code coverage by measuring **how sensitive tests are to real behavior changes**, helping
 you identify weak or missing assertions and improve overall test robustness.
 
+---
+
+## Test Types and Regression Strategy
+
+This section focuses on how different test types (unit, integration, contract, end-to-end, smoke) work together to form a
+**regression testing strategy**, how they are ordered in CI pipelines, and which environments they typically run in.
+
+### Regression Testing (the “why”)
+
+**Regression testing** is testing that verifies existing functionality still works correctly **after changes are made**.
+
+Whenever you:
+
+- Fix bugs
+- Add new features
+- Refactor code
+
+you risk **breaking something that used to work**. Regression testing checks for that.
+
+**What regression testing focuses on:**
+
+- Previously working features
+- Core business logic
+- Critical user flows (login, payments, APIs, etc.)
+
+**Key idea:**  
+Regression testing is a **purpose** (why you run tests), not a specific test type.  
+You can use **unit, integration, contract, or E2E tests** as regression tests.
+
+### Integration Tests
+
+**Integration tests** verify that multiple components or services work correctly **together**.
+
+Typical focus:
+
+- Service ↔ database interactions
+- REST controller + service + repository working as a slice
+- Communication between internal components or modules
+
+Characteristics:
+
+- Slower than unit tests, faster than full E2E tests
+- Often run in CI using tools like `@SpringBootTest`, Testcontainers, or in-memory infrastructure
+- Good balance between confidence and speed
+
+Typical environments:
+
+- **Local / CI**: most integration tests
+- **DEV / test environments**: selected, heavier integration scenarios if needed
+
+### API Contract Tests
+
+An **API contract test** verifies that an API adheres to a **predefined agreement (contract)** between a **producer**
+(backend service) and a **consumer** (frontend, mobile app, or another service).
+
+The contract defines:
+
+- Request format (URL, headers, body)
+- Response format (JSON structure, fields, types)
+- Status codes and error responses
+
+Example contract (expected behavior):
+
+```http
+GET /users/123
+```
+
+Expected JSON:
+
+```json
+{
+  "id": 123,
+  "name": "John",
+  "email": "john@example.com"
+}
+```
+
+If the backend changes the response to:
+
+```json
+{
+  "id": 123,
+  "fullName": "John"
+}
+```
+
+then:
+
+- `email` is missing
+- `name` changed to `fullName`
+
+A **contract test** would fail and catch this **before** consumers break in higher environments.
+
+Where contract tests are especially useful:
+
+- Microservices architectures
+- Frontend ↔ backend communication
+- Third-party API integrations
+
+Common styles:
+
+- **Consumer-driven contract testing** (e.g., Pact)
+- **Schema-based contract testing** (e.g., OpenAPI/Swagger-based checks)
+
+Typical environments:
+
+- **CI**: main place to run contract tests (fast feedback before deploy)
+- **Local**: during development when evolving contracts
+
+### End-to-End (E2E), System, Acceptance, and Smoke Tests
+
+**End-to-End (E2E) tests** run against the **whole application** as a user would experience it.
+
+They exercise full flows, for example:
+
+- User logs in → adds an item → pays → sees confirmation
+
+Other closely related terms:
+
+- **System tests**: focus on complete system behavior, often in a deployed environment.
+- **Acceptance tests**: validate that the system meets business requirements (often written in BDD style).
+- **Smoke tests**: a **small, fast subset** of tests that check whether the system is fundamentally healthy after
+  deployment (e.g., app starts, `/health` endpoint works, login works).
+
+Typical environments:
+
+- **DEV / test / staging**: main place for E2E, system, acceptance, and smoke tests.
+- **Production**: sometimes **smoke or synthetic tests** (carefully designed not to harm real users or data).
+
+E2E tests provide **high confidence** but are:
+
+- Slower
+- More brittle
+- More expensive to maintain
+
+Therefore, most teams keep E2E tests **few and focused on critical paths**.
+
+### How These Fit Into Regression Testing
+
+Regression testing is the umbrella; the different test types are tools underneath it:
+
+```text
+Regression Testing
+├── Unit tests
+├── Integration tests
+├── Contract tests
+└── End-to-End / System / Acceptance / Smoke tests
+```
+
+For example, after a change to a payment service:
+
+- **Unit tests** verify payment calculations.
+- **Integration tests** verify service ↔ database or service ↔ other components.
+- **Contract tests** verify that the service still satisfies API contracts used by other services or frontends.
+- **E2E tests** verify a full checkout flow from a user perspective.
+
+Running all of these together is what forms a **regression test suite**.
+
+### Order in CI Pipelines
+
+A practical pipeline for microservices might look like this:
+
+**On every commit (fast feedback):**
+
+- Run **unit tests**
+- Run a **selected subset of integration tests**
+
+**On pull request (before merge to main):**
+
+- Run **all unit tests**
+- Run **full integration test suite**
+- Run **API contract tests**
+
+**Before or immediately after deployment (DEV / staging):**
+
+- Run **smoke tests** (fast checks that the system is up and basic flows work)
+- Run a **small, high-value E2E/acceptance suite** covering critical user journeys
+
+**Optionally in production:**
+
+- Run **synthetic / canary / health checks** to continuously validate core behavior.
+
+This ordering balances:
+
+- **Speed** (fast tests early, slow tests later)
+- **Confidence** (more realistic tests closer to deployment)
+
+### Where Each Test Type Usually Runs
+
+- **Local developer machine**
+  - Unit tests
+  - A subset of integration tests
+  - Sometimes contract tests when developing contracts
+
+- **CI (build pipeline)**
+  - Unit tests (always)
+  - Integration tests
+  - API contract tests
+  - Static analysis, mutation testing (optionally)
+
+- **DEV / test / staging environments**
+  - Full integration in environment-like conditions
+  - E2E / system / acceptance tests
+  - Smoke tests after deployment
+
+- **Production**
+  - Health checks
+  - Synthetic / canary tests
+  - Very limited, carefully designed smoke/E2E checks (if used)
+
+Together, these layers give you a **regression safety net** that catches issues early and close to where they are
+introduced, while still validating that **real user flows** work in deployed environments.
+
