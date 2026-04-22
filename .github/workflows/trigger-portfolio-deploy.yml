@@ -1,0 +1,26 @@
+name: Trigger Portfolio Deploy
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - 'personal-blogs/**/*.md'
+      - 'personal-blogs/*.md'
+  workflow_dispatch:
+
+jobs:
+  deploy-portfolio:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger portfolio deploy hook
+        run: |
+          if [ -z "$PORTFOLIO_DEPLOY_HOOK_URL" ]; then
+            echo "PORTFOLIO_DEPLOY_HOOK_URL is not configured."
+            echo "Add the secret in yilmaznaslan repository settings."
+            exit 0
+          fi
+
+          curl -X POST "$PORTFOLIO_DEPLOY_HOOK_URL"
+        env:
+          PORTFOLIO_DEPLOY_HOOK_URL: ${{ secrets.PORTFOLIO_DEPLOY_HOOK_URL }}
