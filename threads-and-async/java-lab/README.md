@@ -37,8 +37,8 @@ Based on `../THREADS_AND_ASYNC_GUIDE.md`:
 
 **Run a specific example:**
 ```bash
-./gradlew runExample -PmainClass=com.yilmaznaslan.threads.basics.ThreadBasicsExample
-./gradlew runExample -PmainClass=com.yilmaznaslan.threads.completablefuture.CompletableFutureExample
+./gradlew runExample -PmainClass=com.yilmaznaslan.lab.concurrancy.ManualThreadCreationDemo
+./gradlew runExample -PmainClass=com.yilmaznaslan.lab.concurrancy.CompletableFutureExample
 ```
 
 ### Method 2: Using your IDE (Easiest for development)
@@ -72,8 +72,8 @@ Based on `../THREADS_AND_ASYNC_GUIDE.md`:
 ./gradlew run
 
 # Run specific example
-./gradlew runExample -PmainClass=com.yilmaznaslan.threads.basics.ThreadBasicsExample
-./gradlew runExample -PmainClass=com.yilmaznaslan.threads.completablefuture.CompletableFutureExample
+./gradlew runExample -PmainClass=com.yilmaznaslan.lab.concurrancy.ManualThreadCreationDemo
+./gradlew runExample -PmainClass=com.yilmaznaslan.lab.concurrancy.CompletableFutureExample
 
 # Run tests
 ./gradlew test
@@ -84,6 +84,6 @@ Based on `../THREADS_AND_ASYNC_GUIDE.md`:
 
 ### Examples Available
 
-- `com.yilmaznaslan.threads.basics.ThreadBasicsExample` - Basic thread creation
-- `com.yilmaznaslan.threads.completablefuture.CompletableFutureExample` - Async programming
+- `com.yilmaznaslan.lab.concurrancy.ManualThreadCreationDemo` - Basic thread creation
+- `com.yilmaznaslan.lab.concurrancy.CompletableFutureExample` - Async programming
 
