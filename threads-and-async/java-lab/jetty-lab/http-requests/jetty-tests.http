@@ -1,0 +1,43 @@
+### Test Jetty Fundamentals Demo (Port 8080)
+GET http://localhost:8080/test-path
+
+### Test Jetty Fundamentals Demo with Query Params
+GET http://localhost:8080/search?q=jetty
+
+###
+
+### Test Jetty Servlet Demo (Port 8081)
+GET http://localhost:8081/hello
+
+### Test Jetty Servlet Demo - 404
+GET http://localhost:8081/invalid-path
+
+###
+
+### Test Jetty Routing Demo (Port 8082)
+GET http://localhost:8082/api
+
+### Test Jetty Routing Demo POST
+POST http://localhost:8082/api
+Content-Type: application/json
+
+{
+  "name": "test"
+}
+
+### Test Jetty Routing Demo Status
+GET http://localhost:8082/status
+
+### Test Jetty Routing Demo Method Not Allowed
+PUT http://localhost:8082/api
+
+###
+
+### Test Jetty Best Practices Demo (Port 8083)
+GET http://localhost:8083/api/users
+
+### Test Jetty Best Practices Demo POST
+POST http://localhost:8083/api/users
+
+### Test Jetty Best Practices Demo Method Not Allowed
+DELETE http://localhost:8083/api/users
